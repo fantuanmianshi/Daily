@@ -1,3 +1,7 @@
+"""
+"""
+
+
 # solution 1
 def special_single_number_1(lst):
     ht = {}                          # a hash map

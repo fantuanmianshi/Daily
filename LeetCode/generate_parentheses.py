@@ -1,3 +1,14 @@
+"""
+Given n pairs of parentheses, write a function to generate all combinations
+of well-formed parentheses.
+
+For example, given n = 3, a solution set is:
+
+"((()))", "(()())", "(())()", "()(())", "()()()"
+
+Tag: Backtracking, String
+"""
+
 
 class Solution1:
     # @param {integer} n
@@ -27,12 +38,12 @@ class Solution1:
 
 
 class Solution2:
-    def generateParenthesis(n):
+    def generateParenthesis(self, n):
         if n == 1:
             return set(["()"])
         else:
             ret = set()
-            for i in generateParenthesis(n-1):
+            for i in self.generateParenthesis(n-1):
                 ret.add("()"+i)
                 ret.add("("+i+")")
                 ret.add(i+"()")
