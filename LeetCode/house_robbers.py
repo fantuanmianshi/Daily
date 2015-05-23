@@ -17,7 +17,7 @@ class Solution:
         if not nums:
             return 0
 
-        current, previous, result = 0, 0, 0
+        current, previous = 0, 0
         for x in nums:
             temp = current
             current = max(current, x + previous)
