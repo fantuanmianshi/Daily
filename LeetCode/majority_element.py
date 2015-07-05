@@ -17,3 +17,24 @@ class Solution:
             count_dict[x] = count_dict.get(x, 0) + 1
             if count_dict[x] > half:
                 return x
+
+    def majorityElementMooreVoting(self, nums):
+        index, count = 0, 1
+        i = 1
+        while i < len(nums):
+            if nums[i] == nums[index]:
+                count += 1
+            else:
+                count -= 1
+            if count == 0:
+                index, count = i, 1
+            i += 1
+
+        count = 0
+        for x in nums:
+            if x == nums[index]:
+                count += 1
+        if count > len(nums) / 2:
+            return nums[index]
+        return -1
+
